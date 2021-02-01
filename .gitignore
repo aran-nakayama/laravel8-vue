@@ -21,3 +21,12 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+backend-encrypted
+format.json
+.bloomcycle.bin
+.tracker.bin
+.usage-cache.bin
+.usage.json
+fs.json
+.metadata.bin
+config.json
