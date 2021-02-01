@@ -46,8 +46,8 @@ http://localhost/
 npm周り
 ```
 cd laravel
-npm install
-npm run dev            // npm run watch-pollでバックグラウンド実行
+docker-compose exec app npm install
+docker-compose exec app npm run dev            // npm run watch-pollでバックグラウンド実行
 ```
 
 
