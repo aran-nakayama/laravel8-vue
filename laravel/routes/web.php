@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+# get("URL" => "コントローラー＠アクション")
+
+Route::get('/', 'App\Http\Controllers\ArticleController@index');
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
