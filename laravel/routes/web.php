@@ -16,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 # get("URL" => "コントローラー＠アクション")
 # laravel8.xではルーティングを上からしっかり書かなければならない。
 
+Auth::routes();
 Route::get('/', 'App\Http\Controllers\ArticleController@index');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

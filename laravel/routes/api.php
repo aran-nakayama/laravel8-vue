@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*  教材の指示によりコメントアウト -> 必要であれば後に解除する
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+*/
