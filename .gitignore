@@ -33,3 +33,4 @@ fs.json
 .metadata.bin
 config.json
 .DS_Store
+#.docker ディレクトリを入れるだけでよかったみたい？

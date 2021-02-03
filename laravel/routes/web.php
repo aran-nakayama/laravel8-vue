@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 # get("URL" => "コントローラー＠アクション")
+# laravel8.xではルーティングを上からしっかり書かなければならない。
 
 Route::get('/', 'App\Http\Controllers\ArticleController@index');
 
