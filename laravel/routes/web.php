@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 # laravel8.xではルーティングを上からしっかり書かなければならない。
 
 Auth::routes();
+
 Route::get('/', 'App\Http\Controllers\ArticleController@index');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
