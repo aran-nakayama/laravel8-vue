@@ -71,14 +71,8 @@
                                     {{ __('ユーザー登録') }}
                                 </button>
                             </div>
-                        </div>
-                                                
+                        </div>                                             
                     </form>
-
-                    <div class="mt-0">
-                        <a href="{{ url('login') }}" class="card-text">ログインはこちら</a>
-                    </div>
-
                 </div>
             </div>
         </div>
