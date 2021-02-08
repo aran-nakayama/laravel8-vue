@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark green">
 
-  <a class="navbar-brand" href="/"><i class="fab fa-pagelines"></i>くさったー</a>
+  <a class="navbar-brand" href="/"><i class="fab fa-pagelines"></i> くさったー</a>
 
     <ul class="navbar-nav ml-auto">
 
@@ -18,7 +18,7 @@
 
         @auth  {{-- ログイン中 --}}
         <li class="nav-item">
-        <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
+        <a class="nav-link" href="{{ url('/articles/create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a>
         </li>
         @endauth
 
