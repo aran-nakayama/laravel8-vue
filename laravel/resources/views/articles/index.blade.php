@@ -5,7 +5,7 @@
 @section('content')
   @include('nav') {{--ナビバーを追加している--}}
   <div class="container">
-    @foreach($articles as $article) 
+    @foreach($articles as $article)
       <div class="card mt-3">
         <div class="card-body d-flex flex-row">
           <i class="fas fa-user-circle fa-3x mr-1"></i>

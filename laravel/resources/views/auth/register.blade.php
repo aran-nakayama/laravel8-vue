@@ -71,7 +71,7 @@
                                     {{ __('ユーザー登録') }}
                                 </button>
                             </div>
-                        </div>                                             
+                        </div>
                     </form>
                 </div>
             </div>
