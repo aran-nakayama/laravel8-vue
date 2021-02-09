@@ -23,7 +23,7 @@ Route::get('/', 'App\Http\Controllers\ArticleController@index')->name('articles.
 Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index'])->middleware('auth');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::get('/welcome', function () {
     return view('welcome');
