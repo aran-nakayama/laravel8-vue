@@ -1,6 +1,6 @@
 @extends('apptechpit')
 
-@section('title', '記事一覧')
+@section('title','記事一覧')
 
 @section('content')
   @include('nav') {{--ナビバーを追加している--}}
@@ -29,4 +29,5 @@
       </div>
     @endforeach
   </div>
+  <h1></h1>
 @endsection
