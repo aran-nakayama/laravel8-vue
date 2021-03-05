@@ -20,6 +20,10 @@ Auth::routes();
 Route::get('/', 'App\Http\Controllers\ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index','show'])->middleware('auth');
 Route::resource('/articles', 'App\Http\Controllers\ArticleController')->only('show');
+Route::prefix('articles')->name('article.')->group(function(){
+    Route::put('/{article}/like', 'App\Http\Controllers\ArticleController@like')->name('like')->middleware('auth');
+    Route::delete('/{article}/like', 'App\Http\Controllers\ArticleController@unlike')->name('unlike')->middleware('auth');
+});
 
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
