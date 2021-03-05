@@ -8,21 +8,22 @@
         :class="{'red-text': this.isLikedBy}"
       />
     </button>
-    10
+    20
+    <p>{{ isLikedBy }}</p>
   </div>
 </template>
 
 <script>
 export default{
     props: {
-        initialsLikedBy: {
+        initialIsLikedBy: {
             type: Boolean,
             default: false
         }
     },
     data() {
         return {
-            isLikedBy: this.initialsLikedBy
+            isLikedBy: this.initialIsLikedBy
         }
     }
 }
