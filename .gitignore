@@ -34,3 +34,6 @@ fs.json
 config.json
 .DS_Store
 #.docker ディレクトリを入れるだけでよかったみたい？
+/public/css
+/public/js
+/public/mix-manifest.json
