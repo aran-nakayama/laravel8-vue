@@ -3,17 +3,14 @@
 @section('title','記事一覧')
 
 @section('content')
-  @include('nav') {{--ナビバーを追加している--}}
+  @include('nav')
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="card mt-3">
           <div class="card-body pt-0">
-            @include('error_card_list')
-            <div class="card-text">
-              <show-article>
+              <show-article :authorized="@json(Auth::check())">
               </show-article>
-            </div>
           </div>
         </div>
       </div>
