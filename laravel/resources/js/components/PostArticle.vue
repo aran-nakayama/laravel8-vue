@@ -1,7 +1,6 @@
 <template>
   <div>
     <form @submit.prevent="onSubmit">
-      @csrf
       <div class="md-form">
         <label>タイトル</label>
         <input v-model="title" class="form-control" type="text">
@@ -19,6 +18,7 @@ export default{
     return{
       title: '',
       body: '',
+      article: {},
     }
   },
   methods:{
@@ -28,14 +28,19 @@ export default{
               return
       }
 
-      let post = {
+      this.article = {
         title: this.title,
         body: this.body
       }
-      this.$emit('post-submitted', post)
+      this.$emit('post-submitted', this.article)
+
+      this.saveToDatabase()
 
       this.title=''
       this.body=''
+    },
+    async saveToDatabase(){
+      const response = await axios.post('articles', this.article)
     }
   }
 }

@@ -3,10 +3,10 @@
     <post-article
       @post-submitted="addPost">
     </post-article>
-    <div v-for="(post,index) in posts" :key="index" class="pt-4">
-      <span class="h4 card-title">{{post.title}}</span>
+    <div v-for="(article,index) in articles" :key="index" class="pt-4">
+      <span class="h4 card-title">{{article.title}}</span>
       <br/>
-      <span class="card-text">{{post.body}}</span>
+      <span class="card-text">{{article.body}}</span>
     </div>
   </div>
 </template>
@@ -25,12 +25,12 @@ export default {
   },
   data(){
     return{
-      posts:[]
+      articles:[]
     }
   },
   methods:{
-    addPost(post){
-      this.posts.push(post)
+    addPost(article){
+      this.articles.push(article)
     }
   }
 }
