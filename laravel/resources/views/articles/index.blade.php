@@ -11,11 +11,8 @@
           <div class="card-body pt-0">
             @include('error_card_list')
             <div class="card-text">
-              <form>
-                @csrf
-                <post-article>
-                </post-article>
-              </form>
+              <show-article>
+              </show-article>
             </div>
           </div>
         </div>

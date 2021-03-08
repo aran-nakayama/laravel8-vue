@@ -30,11 +30,13 @@ import './bootstrap'
 import Vue from 'vue'
 import ArticleLike from './components/ArticleLike'
 import PostArticle from './components/PostArticle'
+import ShowArticle from './components/ShowArticle'
 
 const app = new Vue({
   el: '#app',
   components: {
     ArticleLike,
     PostArticle,
+    ShowArticle,
   }
 })
