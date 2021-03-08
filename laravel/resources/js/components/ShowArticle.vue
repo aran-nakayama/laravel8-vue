@@ -5,7 +5,7 @@
     <div v-for="(post,index) in posts" :key="index" class="pt-4">
       <span class="h4 card-title">{{post.title}}</span>
       <br/>
-      <span class="card-text">{{post.title}}{{post.body}}</span>
+      <span class="card-text">{{post.body}}</span>
     </div>
   </div>
 </template>
@@ -24,7 +24,6 @@ export default {
   methods:{
     addPost(post){
       this.posts.push(post)
-      console.log('post')
     }
   }
 }

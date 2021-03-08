@@ -23,6 +23,11 @@ export default{
   },
   methods:{
     onSubmit(){
+      if (this.title === '' || this.body === '') {
+              alert('入力してください')
+              return
+      }
+
       let post = {
         title: this.title,
         body: this.body
