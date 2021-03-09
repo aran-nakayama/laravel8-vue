@@ -12,11 +12,14 @@
         </div>
         <h2 class="h5 card-title m-0">
           <p class="text-dark mt-2">
-            {{ $user->name }}
+            {{ $user->name }}のマイページ
           </p>
         </h2>
       </div>
     </div>
+    @foreach($articles as $article)
+      @include('articles.card')
+    @endforeach
   </div>
 
 @endsection
