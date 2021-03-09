@@ -24,10 +24,10 @@ Route::prefix('articles')->name('article.')->group(function(){
     Route::put('/{article}/like', 'App\Http\Controllers\ArticleController@like')->name('like')->middleware('auth');
     Route::delete('/{article}/like', 'App\Http\Controllers\ArticleController@unlike')->name('unlike')->middleware('auth');
 });
+Route::get('/users/{name}', 'App\Http\Controllers\UserController@show')->name('users.show');
 
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
