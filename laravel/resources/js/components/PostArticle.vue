@@ -23,8 +23,12 @@ export default{
   },
   methods:{
     onSubmit(){
-      if (this.title === '' || this.body === '') {
-              alert('入力してください')
+      if (this.title === '' ) {
+              alert('タイトルを入力してください')
+              return
+      }
+      if (this.body === '' ) {
+              alert('本文を入力してください')
               return
       }
 

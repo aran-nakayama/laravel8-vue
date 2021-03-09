@@ -1,8 +1,6 @@
 <template>
   <div v-show="authorized">
-    <post-article
-      @post-submitted="addPost">
-    </post-article>
+    <post-article @post-submitted="addPost"></post-article>
     <div v-for="(article,index) in articles" :key="index" class="pt-4">
       <span class="h4 card-title">{{article.title}}</span>
       <br/>
