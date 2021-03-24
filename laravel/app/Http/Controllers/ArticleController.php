@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -59,9 +60,11 @@ class ArticleController extends Controller
     {
         $article->likes()->detach($request->user()->id);
         $article->likes()->attach($request->user()->id);
-        dd('hell');
 
-        return 'hello';
+        return [
+            'id'=> $article->id,
+            'countLikes'=> $article->count_likes
+        ];
     }
 
     public function unlike(Request $request, Article $article)

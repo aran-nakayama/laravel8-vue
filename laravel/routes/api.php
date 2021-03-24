@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('articles')->name('article.')->group(function(){
-    Route::put('/{article}/like', 'App\Http\Controllers\api\ArticleController@like')->name('like');
-    Route::delete('/{article}/like', 'App\Http\Controllers\api\ArticleController@unlike')->name('unlike');
+Route::prefix('/articles')->name('article.')->group(function(){
+    Route::put('/{article}/like', 'App\Http\Controllers\ArticleController@like')->name('like')->middleware('auth');
+    Route::delete('/{article}/like', 'App\Http\Controllers\ArticleController@unlike')->name('unlike')->middleware('auth');
 });
 
 
