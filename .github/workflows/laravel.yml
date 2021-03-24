@@ -1,10 +1,6 @@
 name: laravel-test
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   laravel-tests:
