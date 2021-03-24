@@ -24,7 +24,6 @@ Route::get('/users/{name}', 'App\Http\Controllers\UserController@show')->name('u
 
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
