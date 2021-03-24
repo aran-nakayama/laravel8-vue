@@ -59,11 +59,9 @@ class ArticleController extends Controller
     {
         $article->likes()->detach($request->user()->id);
         $article->likes()->attach($request->user()->id);
+        dd('hell');
 
-        return [
-            'id'=> $article->id,
-            'countLikes'=> $article->count_likes
-        ];
+        return 'hello';
     }
 
     public function unlike(Request $request, Article $article)

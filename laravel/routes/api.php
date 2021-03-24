@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*  教材の指示によりコメントアウト -> 必要であれば後に解除する
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('articles')->name('article.')->group(function(){
+    Route::put('/{article}/like', 'App\Http\Controllers\api\ArticleController@like')->name('like');
+    Route::delete('/{article}/like', 'App\Http\Controllers\api\ArticleController@unlike')->name('unlike');
 });
-*/
+
+
+Route::get('/user', function (Request $request) {
+    return [0,'a'];
+});
+
