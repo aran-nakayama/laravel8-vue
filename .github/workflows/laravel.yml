@@ -9,4 +9,4 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - run: ./vendor/bin/phpunit
-      working-directory: /home/runner/work/laravel8-vue/laravel8-vue/laravel
+        working-directory: /home/runner/work/laravel8-vue/laravel8-vue/laravel
