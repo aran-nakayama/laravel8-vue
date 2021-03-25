@@ -2,7 +2,6 @@ name: laravel-test
 
 on:
   push:
-    branches: [main]
     branches: [github-actions]
   pull_request:
     branches: [main]
