@@ -38,7 +38,5 @@ jobs:
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
         working-directory: /home/runner/work/laravel8-vue/laravel8-vue/laravel
-      - run: php artisan config:cache
-        working-directory: /home/runner/work/laravel8-vue/laravel8-vue/laravel
       - run: ./vendor/bin/phpunit
         working-directory: /home/runner/work/laravel8-vue/laravel8-vue/laravel
