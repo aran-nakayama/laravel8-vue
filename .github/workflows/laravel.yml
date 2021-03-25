@@ -2,13 +2,13 @@ name: laravel-test
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+    branches: [github-actions]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   laravel-tests:
-
     runs-on: ubuntu-latest
     services:
       postgres:
