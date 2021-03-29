@@ -13,11 +13,13 @@ class AuthenticationTest extends TestCase
   use RefreshDatabase;
   use WithoutMiddleware;
 
-  protected $user = [
-    'name' => 'tester',
-    'email' => 'test@example.com',
-    'password' => "password",
-  ];
+  public function setUp(): void
+  {
+
+    parent::setUp();
+
+    $this->user = User::factory()->create();
+  }
 
   /**
    * A basic feature test example.
@@ -31,6 +33,7 @@ class AuthenticationTest extends TestCase
     $response->assertStatus(200);
   }
 
+  #csrfでログインと登録が弾かれている？
   /**
    * 登録テスト
    */
@@ -44,6 +47,9 @@ class AuthenticationTest extends TestCase
     ]);
     $response->assertStatus(302)
       ->assertRedirect(route('articles.index'));
+
+    $this->actingAs($this->user);
+    $this->assertAuthenticated();
   }
 
   /**
@@ -51,20 +57,29 @@ class AuthenticationTest extends TestCase
    */
   public function testLogin(): void
   {
-    // ユーザー登録
-    User::factory()->create([
-      'email' => $this->user['email'],
-      'password' => \Hash::make($this->user['password']),
-    ]);
+    $this->actingAs($this->user);
 
     $response = $this->post('/login', [
       'email' => $this->user['email'],
       'password' => $this->user['password'],
     ]);
 
+
     $response->assertStatus(302)
       ->assertRedirect(route('articles.index'));
 
     $this->assertAuthenticated();
   }
+
+  public function testLogout(): void
+    {
+      $this->actingAs($this->user);
+      $this->assertAuthenticated();
+      $response = $this->post('/logout');
+      /*
+      $response->assertStatus(302)
+        ->assertRedirect(route('articles.index'));
+      */
+      $this->assertGuest();
+    }
 }
