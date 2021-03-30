@@ -21,8 +21,6 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
-
-# ここから下は　自分（中山）が変更した。
 backend-encrypted
 format.json
 .bloomcycle.bin
@@ -33,7 +31,7 @@ fs.json
 .metadata.bin
 config.json
 .DS_Store
-#.docker ディレクトリを入れるだけでよかったみたい？
 /public/css
 /public/js
 /public/mix-manifest.json
+storage/debugbar/*.json

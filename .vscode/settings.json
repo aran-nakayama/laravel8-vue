@@ -5,5 +5,10 @@
         "vue",
         "vue-html",
         "vue-postcss"
+    ],
+    "cSpell.ignoreWords": [
+        "this",
+        "this user",
+        "user"
     ]
 }
