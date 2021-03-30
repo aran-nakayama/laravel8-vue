@@ -11,7 +11,6 @@ use Tests\TestCase;
 class AuthenticationTest extends TestCase
 {
   use RefreshDatabase;
-  use WithoutMiddleware;
 
   public function setUp(): void
   {
@@ -21,19 +20,6 @@ class AuthenticationTest extends TestCase
     $this->user = User::factory()->create();
   }
 
-  /**
-   * A basic feature test example.
-   *
-   * @return void
-   */
-  public function testExample()
-  {
-    $response = $this->get('/');
-
-    $response->assertStatus(200);
-  }
-
-  #csrfでログインと登録が弾かれている？
   /**
    * 登録テスト
    */
@@ -47,9 +33,6 @@ class AuthenticationTest extends TestCase
     ]);
     $response->assertStatus(302)
       ->assertRedirect(route('articles.index'));
-
-    $this->actingAs($this->user);
-    $this->assertAuthenticated();
   }
 
   /**
@@ -57,29 +40,29 @@ class AuthenticationTest extends TestCase
    */
   public function testLogin(): void
   {
-    $this->actingAs($this->user);
-
     $response = $this->post('/login', [
       'email' => $this->user['email'],
       'password' => $this->user['password'],
     ]);
 
-
     $response->assertStatus(302)
       ->assertRedirect(route('articles.index'));
 
-    $this->assertAuthenticated();
+    #$this->assertAuthenticated();
   }
 
+  /**
+   * ログアウトテスト
+   */
   public function testLogout(): void
     {
       $this->actingAs($this->user);
-      $this->assertAuthenticated();
+
       $response = $this->post('/logout');
-      /*
+
       $response->assertStatus(302)
         ->assertRedirect(route('articles.index'));
-      */
+
       $this->assertGuest();
     }
 }
